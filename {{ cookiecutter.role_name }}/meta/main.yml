@@ -1,0 +1,17 @@
+galaxy_info:
+  role_name: {{ cookiecutter.role_name | lower | replace(' ', '_') }}
+  author: {{ cookiecutter.author }}
+  description: {{ cookiecutter.short_description }}
+  company: {{ cookiecutter.company }}
+  license: {{ cookiecutter.license }}
+  min_ansible_version: {{ cookiecutter.min_ansible_version }}
+
+  platforms:
+    - name: EL
+      versions:
+        - 7
+
+  galaxy_tags:
+    - system
+
+dependencies: []

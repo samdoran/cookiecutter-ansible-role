@@ -1,0 +1,12 @@
+{
+    "role_title": "My Awesome Role",
+    "role_name": "{{ cookiecutter.role_title | lower | replace(' ','_') }}",
+    "repo_name": "ansible-role-{{ cookiecutter.role_name }}",
+    "author": "Bob Marley",
+    "short_description": "This role does amazing things",
+    "company": "Acme, Inc.",
+    "galaxy_username": "{{ cookiecutter.author | lower | replace(' ', '') }}",
+    "travis_username": "{{ cookiecutter.author | lower | replace(' ', '') }}",
+    "license": "Apache 2.0",
+    "min_ansible_version": "2.7"
+}
