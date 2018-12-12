@@ -1,10 +1,12 @@
 # Ansible Role Cookiecutter #
 
-This is a [cookiecutter project] for creating [Ansible roles]. It includes tests using [Molecule], [Ansible Lint], and [YAML Lint] to work with [Travis CI]
+This is a [cookiecutter project] for creating [Ansible roles]. It includes tests using [Molecule], [Ansible Lint], and [YAML Lint] to work with [Travis CI].
 
 To use this, first install `cookiecutter`, then run `cookiecutter gh:samdoran/cookiecutter-ansible-role` and answer the prompts.
 
-You can also use Molecule to initialize a new role using this template by running `molecule init template --url https://github.com/samdoran/cookiecutter-ansible-role.git`.
+You can also use Molecule to initialize a new role using this template by running `molecule init template --url https://github.com/samdoran/cookiecutter-ansible-role`.
+
+Or use Cookiecutter directly: `cookiecutter gh:samdoran/cookiecutter-ansible-role`.
 
 ## Development Workflow ##
 
