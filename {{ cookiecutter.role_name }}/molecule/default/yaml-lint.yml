@@ -4,3 +4,4 @@ rules:
     max: 400
     level: warning
   document-start: disable
+  comments-indentation: disable
