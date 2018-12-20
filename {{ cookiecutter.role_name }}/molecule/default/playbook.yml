@@ -4,7 +4,7 @@
   tasks:
     - debug:
         msg: >-
-          {% raw %}Testing with Ansible {{ ansible_version.full }} using Python {{ ansible_python_version }}
+          {% raw %}Testing with Ansible {{ ansible_version.full }} using Python {{ ansible_facts.python_version }}
           on {{ ansible_facts.distribution }} {{ ansible_facts.distribution_version }}{% endraw %}
 
     - import_role:
