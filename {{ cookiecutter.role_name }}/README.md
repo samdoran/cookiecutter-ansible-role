@@ -33,4 +33,4 @@ Example Playbook
 License
 -------
 
-MIT
+{{ cookiecutter.license }}
