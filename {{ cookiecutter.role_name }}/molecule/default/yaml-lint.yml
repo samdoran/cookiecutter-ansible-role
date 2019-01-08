@@ -5,3 +5,4 @@ rules:
     level: warning
   document-start: disable
   comments-indentation: disable
+  truthy: disable
