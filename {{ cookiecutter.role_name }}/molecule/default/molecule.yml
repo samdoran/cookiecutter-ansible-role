@@ -4,8 +4,6 @@ driver:
   name: docker
 lint:
   name: yamllint
-  options:
-    config-file: molecule/default/yaml-lint.yml
 platforms:
   - name: {{ cookiecutter.role_name }}-test
     image: "samdoran/${MOLECULE_DISTRIBUTION:-centos7}-ansible:latest"
