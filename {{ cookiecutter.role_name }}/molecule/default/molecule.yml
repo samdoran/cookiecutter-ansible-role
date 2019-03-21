@@ -17,8 +17,12 @@ provisioner:
   lint:
     name: ansible-lint
     options:
+      exclude:
+        - molecule/default/playbook.yml
       x:
-        - ANSIBLE0010
+        - 204 # Lines should be no longer than 160 chars
+        - 403 # Package installs should not use latest
+        - 502 # All tasks should be named
   playbooks:
     converge: ${MOLECULE_PLAYBOOK:-playbook.yml}
 scenario:
