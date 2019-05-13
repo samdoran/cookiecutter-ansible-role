@@ -16,6 +16,9 @@ platforms:
     pre_build_image: yes
 provisioner:
   name: ansible
+  config_options:
+    defaults:
+      stdout_callback: debug
   lint:
     name: ansible-lint
     options:
