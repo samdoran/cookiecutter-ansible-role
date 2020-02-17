@@ -63,5 +63,5 @@ A special thank you to [Jeff Geerling] for being a trailblazer with Molecule (an
 [Ansible Lint]: https://docs.ansible.com/ansible-lint/
 [YAML Lint]:https://yamllint.readthedocs.io/en/stable/
 [Travis CI]: https://travis-ci.org
-[several containers]: https://hub.docker.com/u/samdoran/
+[several containers]: https://quay.io/user/samdoran
 [Jeff Geerling]: https://www.jeffgeerling.com/blog/2018/testing-your-ansible-roles-molecule
