@@ -12,7 +12,7 @@ Or use Cookiecutter directly: `cookiecutter gh:samdoran/cookiecutter-ansible-rol
 
 Molecule uses Docker by default to spin up local containers for testing. I have created [several containers] that have Ansible installed and work well for testing Ansible roles. Feel free to use them or change to your own in `molecule/default/molecule.yml`.
 
-To test your role, you first need to install Molecule by running `pip install molecule`, or using your package manager of choice.
+To test your role, you first need to install Molecule by running `pip install molecule`, or using your package manager of choice. You may also `pip install molecule[docker]` to also install the `docker` Python library, or `pip install molecule[lint]` to install `ansible-lint`, `yamllint`, and `flake8`.
 
 Next, run `molecule test`. This will run the entire default test scenario, which creates a test container, runs the linters, runs the role twice, then destroys the container.
 
@@ -24,7 +24,9 @@ You can also run `molecule lint`, `molecule idempotence`, etc. to just run a spe
 
 ### Customizing the Test ###
 
-The default scenario runs `molecule/default/playbook.yml`. You can customize this playbook to suit your needs. I usually add some tasks before and after the role to do setup and validate services. I find this easier than writing tests in Python, which Molecule supports.
+The default scenario runs `molecule/default/converge.yml`. You can customize this playbook to suit your needs.
+
+In Molecule 3, [linting behavior changed]. I have configured this template to lint using the same behavior as Molecule 2. It's possible to change this behavior by modifying the commands in `lint:` in the `molecule.yml` file. Linting can be disabled completely by deleting the `lint:`.
 
 The `molecule.yml` file is setup to accept three environment variables:
 
@@ -35,18 +37,17 @@ The `molecule.yml` file is setup to accept three environment variables:
 Valid values for `MOLECULE_DISTRIBUTION` based on how I name my test containers are:
     - centos6
     - centos7 (the default)
-    - rhel6
-    - rhel7
+    - centos8
     - ubuntu14
     - ubuntu16
     - ubuntu18
     - debian8
     - debian9
-    - fedora27
-    - fedora28
+    - debian10
     - fedora29
+    - fedora30
 
-For example, to test your role on RHEL 7, run `env MOLECULE_DISTRIBUTION=rhel7 molecule test`.
+For example, to test your role on Debian 9, run `env MOLECULE_DISTRIBUTION=debian9 molecule test`.
 
 ## TravisCI ##
 
@@ -65,3 +66,4 @@ A special thank you to [Jeff Geerling] for being a trailblazer with Molecule (an
 [Travis CI]: https://travis-ci.org
 [several containers]: https://quay.io/user/samdoran
 [Jeff Geerling]: https://www.jeffgeerling.com/blog/2018/testing-your-ansible-roles-molecule
+[linting behavior changed]: https://molecule.readthedocs.io/en/latest/configuration.html#lint

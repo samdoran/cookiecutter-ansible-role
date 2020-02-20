@@ -1,5 +1,5 @@
 - hosts: all
-  become: true
+  become: yes
 
   tasks:
     - debug:
