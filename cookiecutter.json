@@ -2,6 +2,7 @@
     "role_title": "My Awesome Role",
     "role_name": "{{ cookiecutter.role_title | lower | replace(' ','_') }}",
     "repo_name": "ansible-role-{{ cookiecutter.role_name }}",
+    "branch_name": "main",
     "author": "Sam Doran",
     "short_description": "This role does amazing things",
     "company": "Acme, Inc.",

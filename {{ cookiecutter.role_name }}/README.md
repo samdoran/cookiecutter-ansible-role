@@ -1,7 +1,7 @@
 {{ cookiecutter.role_title | title }}
 =========
 [![Galaxy](https://img.shields.io/badge/galaxy-{{ cookiecutter.galaxy_username }}.{{ cookiecutter.role_name }}-blue.svg?style=flat)](https://galaxy.ansible.com/{{ cookiecutter.galaxy_username }}/{{ cookiecutter.role_name }})
-[![Build Status](https://travis-ci.com/{{ cookiecutter.travis_username }}/{{ cookiecutter.repo_name }}.svg?branch=master)](https://travis-ci.com/{{ cookiecutter.travis_username }}/{{ cookiecutter.repo_name }})
+[![Build Status](https://travis-ci.com/{{ cookiecutter.travis_username }}/{{ cookiecutter.repo_name }}.svg?branch={{ cookiecutter.branch_name }})](https://travis-ci.com/{{ cookiecutter.travis_username }}/{{ cookiecutter.repo_name }})
 
 A brief description of the role goes here.
 
