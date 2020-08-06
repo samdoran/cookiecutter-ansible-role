@@ -4,10 +4,6 @@ This is a [cookiecutter project] for creating [Ansible roles]. It includes tests
 
 To use this, first install `cookiecutter`, then run `cookiecutter gh:samdoran/cookiecutter-ansible-role` and answer the prompts.
 
-You can also use Molecule to initialize a new role using this template by running `molecule init template --url https://github.com/samdoran/cookiecutter-ansible-role`.
-
-Or use Cookiecutter directly: `cookiecutter gh:samdoran/cookiecutter-ansible-role`.
-
 ## Development Workflow ##
 
 Molecule uses Docker by default to spin up local containers for testing. I have created [several containers] that have Ansible installed and work well for testing Ansible roles. Feel free to use them or change to your own in `molecule/default/molecule.yml`.
@@ -26,7 +22,7 @@ You can also run `molecule lint`, `molecule idempotence`, etc. to just run a spe
 
 The default scenario runs `molecule/default/converge.yml`. You can customize this playbook to suit your needs.
 
-In Molecule 3, [linting behavior changed]. I have configured this template to lint using the same behavior as Molecule 2. It's possible to change this behavior by modifying the commands in `lint:` in the `molecule.yml` file. Linting can be disabled completely by deleting the `lint:`.
+In Molecule 3, [linting behavior changed]. I have configured this template to lint using the same behavior as Molecule 2 using the new syntax. It's possible to change this behavior by modifying the commands in `lint:` in the `molecule.yml` file. Linting can be disabled completely by deleting the `lint:`.
 
 The `molecule.yml` file is setup to accept three environment variables:
 
