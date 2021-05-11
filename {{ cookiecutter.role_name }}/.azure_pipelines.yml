@@ -31,7 +31,7 @@ jobs:
       - script: |
           export PATH=/home/vsts/.local/bin:$PATH
           ansible-galaxy install -r molecule/requirements.yml
-          molecule test
+          molecule test --all
         displayName: Molecule
         workingDirectory: $(Build.Repository.LocalPath)
         env:
