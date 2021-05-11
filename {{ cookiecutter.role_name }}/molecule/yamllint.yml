@@ -1,5 +1,7 @@
 extends: default
 
+ignore: .cache
+
 rules:
   braces:
     max-spaces-inside: 1
@@ -10,4 +12,14 @@ rules:
   comments-indentation: disable
   document-start: disable
   line-length: disable
-  truthy: disable
+  truthy:
+    allowed-values:
+      - 'yes'
+      - 'on'
+      - 'true'
+      - 'True'
+      - 'no'
+      - 'off'
+      - 'false'
+      - 'False'
+    check-keys: no

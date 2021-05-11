@@ -1,0 +1,38 @@
+jobs:
+  - job: Linux
+    displayName: T
+    pool:
+      vmImage: ubuntu-20.04
+    strategy:
+      matrix:
+        CentOS 7:
+          MOLECULE_DISTRIBUTION: centos7
+        CentOS 8:
+          MOLECULE_DISTRIBUTION: centos8
+        Debian 9:
+          MOLECULE_DISTRIBUTION: debian9
+        Debian 10:
+          MOLECULE_DISTRIBUTION: debian10
+        Ubuntu 18:
+          MOLECULE_DISTRIBUTION: ubuntu18
+        Ubuntu 20:
+          MOLECULE_DISTRIBUTION: ubuntu20
+
+    steps:
+      - checkout: self
+        path: {{ cookiecutter.role_name }}
+
+      - script: pip3 install yamllint molecule molecule-docker ansible-core docker
+        displayName: Setup
+
+      - script: /home/vsts/.local/bin/yamllint -c molecule/yamllint.yml $(Build.Repository.LocalPath)
+        displayName: Lint
+
+      - script: |
+          export PATH=/home/vsts/.local/bin:$PATH
+          ansible-galaxy install -r molecule/requirements.yml
+          molecule test
+        displayName: Molecule
+        workingDirectory: $(Build.Repository.LocalPath)
+        env:
+          PY_COLORS: 1

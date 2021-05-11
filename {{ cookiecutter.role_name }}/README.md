@@ -1,8 +1,7 @@
 {{ cookiecutter.role_title | title }}
 =========
 [![Galaxy](https://img.shields.io/badge/galaxy-{{ cookiecutter.galaxy_username }}.{{ cookiecutter.role_name }}-blue.svg?style=flat)](https://galaxy.ansible.com/{{ cookiecutter.galaxy_username }}/{{ cookiecutter.role_name }})
-[![Build Status](https://travis-ci.com/{{ cookiecutter.travis_username }}/{{ cookiecutter.repo_name }}.svg?branch={{ cookiecutter.branch_name }})](https://travis-ci.com/{{ cookiecutter.travis_username }}/{{ cookiecutter.repo_name }})
-
+[![Build Status](https://dev.azure.com/{{ cookiecutter.azp_username }}/{{ cookiecutter.repo_name }}/_apis/build/status/CI?branchName={{ cookiecutter.azp_branch }})](https://dev.azure.com/{{ cookiecutter.azp_username }}/{{ cookiecutter.repo_name }}/_build/latest?definitionId=3&branchName={{ cookiecutter.azp_branch }})
 A brief description of the role goes here.
 
 Requirements

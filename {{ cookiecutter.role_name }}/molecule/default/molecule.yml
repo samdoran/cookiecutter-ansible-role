@@ -1,10 +1,9 @@
 dependency:
   name: galaxy
+  enabled: no
+prerun: no
 driver:
   name: docker
-lint: |
-  ansible-lint -x 204,403,502
-  yamllint -c molecule/default/yamllint.yml .
 platforms:
   - name: {{ cookiecutter.role_name }}-test-${MOLECULE_DISTRIBUTION:-centos8}
     image: "quay.io/samdoran/${MOLECULE_DISTRIBUTION:-centos8}-ansible:latest"
@@ -17,7 +16,9 @@ provisioner:
   name: ansible
   config_options:
     defaults:
-      stdout_callback: debug
+      stdout_callback: ansible.posix.debug
+      show_task_path_on_failure: yes
+      force_color: yes
   playbooks:
     converge: ${MOLECULE_PLAYBOOK:-converge.yml}
 scenario:
