@@ -42,10 +42,6 @@ Valid values for `MOLECULE_DISTRIBUTION` based on how I name my test containers 
 
 For example, to test your role on Debian 9, run `env MOLECULE_DISTRIBUTION=debian9 molecule test`.
 
-## TravisCI ##
-
-The included `.travis.yml` file uses a test matrix to test various distributions. It will run `molecule test` on each of the distributions.
-
 
 ## Thanks ##
 
