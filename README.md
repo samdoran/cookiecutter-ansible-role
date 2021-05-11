@@ -27,20 +27,17 @@ The `molecule.yml` file is setup to accept three environment variables:
 `MOLECULE_PLAYBOOK`: the name of the playbook to run
 
 Valid values for `MOLECULE_DISTRIBUTION` based on how I name my test containers are:
-    - centos6
     - centos7
     - centos8  (the default)
-    - ubuntu14
     - ubuntu16
     - ubuntu18
     - ubuntu20
-    - debian8
     - debian9
     - debian10
     - fedora30
     - fedora31
 
-For example, to test your role on Debian 9, run `env MOLECULE_DISTRIBUTION=debian9 molecule test`.
+For example, to test your role on Debian 10, run `env MOLECULE_DISTRIBUTION=debian10 molecule test`.
 
 
 ## Thanks ##
